@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Table
 @Entity
 @Data
@@ -17,7 +20,8 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    @Column(name = "fullname")
     private String fullname;
     private String gender;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<UserRole> roles = new HashSet<>();
 }
