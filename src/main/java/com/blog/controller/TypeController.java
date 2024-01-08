@@ -16,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "*")
 public class TypeController {
 
     public TypeService typeService;
